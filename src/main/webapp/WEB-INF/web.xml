@@ -129,4 +129,69 @@
     <servlet-name>SubmitUpdateTaskController</servlet-name>
     <url-pattern>/SubmitUpdateTaskController</url-pattern>
   </servlet-mapping>
+  
+  <!-- filter start-->
+  <filter>
+  	<filter-name>SignupFilter</filter-name>
+  	<filter-class>ism.filter.SignupFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>SignupFilter</filter-name>
+  	<url-pattern>/SignupController</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>DublicateEmailFilter</filter-name>
+  	<filter-class>ism.filter.DublicateEmailFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>DublicateEmailFilter</filter-name>
+  	<url-pattern>/SignupController</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>LoginFilter</filter-name>
+  	<filter-class>ism.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	<url-pattern>/LoginController</url-pattern>
+  </filter-mapping>
+  
+   <filter>
+  	<filter-name>TaskFilter</filter-name>
+  	<filter-class>ism.filter.TaskFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>TaskFilter</filter-name>
+  	<url-pattern>/AddTaskController</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>EndDateSetFilter</filter-name>
+  	<filter-class>ism.filter.EndDateSetFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EndDateSetFilter</filter-name>
+  	<url-pattern>/AddTaskController</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>UpdateTaskFilter</filter-name>
+  	<filter-class>ism.filter.UpdateTaskFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>UpdateTaskFilter</filter-name>
+  	<url-pattern>/SubmitUpdateTaskController</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>UpdateEndDateSetFilter</filter-name>
+  	<filter-class>ism.filter.UpdateEndDateSetFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>UpdateEndDateSetFilter</filter-name>
+  	<url-pattern>/SubmitUpdateTaskController</url-pattern>
+  </filter-mapping>
+  <!-- filter end -->
 </web-app>

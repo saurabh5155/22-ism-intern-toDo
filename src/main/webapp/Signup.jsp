@@ -8,6 +8,9 @@
 <jsp:include page="Css.jsp"></jsp:include>
 </head>
 <body class="vh-100" data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_1" data-headerbg="color_1" data-sidebar-style="full" data-sibebarbg="color_1" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" direction="ltr" data-primary="color_1">
+	<%
+		String genderValue =(String) request.getAttribute("genderValue");
+	%>
 	<!-- <form action="SignupController" method="post">
 	FirstName:<input name="firstname" type="text">
 	<input type="submit" value="Submit">
@@ -35,30 +38,32 @@
 										<div class="mb-3">
 											<label class="mb-1"><strong>FirstName</strong></label> <input
 												type="text" class="form-control" placeholder="username"
-												name="firstname">
+												name="firstname" value="${firstNameValue }">
+												<span class="badge bgl-danger text-danger font-w700">${firstNameError}</span>
 										</div>
 										<div class="mb-3">
 											<label class="mb-1"><strong>LastName</strong></label> <input
 												type="text" class="form-control" placeholder="lastname"
-												name="lastname">
+												name="lastname" value="${lastNameValue }">
+												<span class="badge bgl-danger text-danger font-w700">${lastNameError}</span>
 										</div>
 										<label class="mb-1"><strong>Gender</strong></label>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" name="gender"
-												value="male"> <label class="form-check-label">
+												value="male"> <label class="form-check-label" <%=genderValue!=null&&genderValue.equals("male")?"checked":"" %>>
 												Male </label>
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" name="gender"
-												value="female"> <label class="form-check-label">
+												value="female"> <label class="form-check-label" <%=genderValue!=null&&genderValue.equals("female")?"checked":"" %>>
 												Female </label>
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" name="gender"
 												value="other"> <label class="form-check-label">
 												Other </label>
+										<span class="badge bgl-danger text-danger font-w700">${genderError}</span>
 										</div>
-										
 										<label class="mb-1"><strong>Select Security Que.</strong></label>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" name="que"
@@ -74,24 +79,28 @@
 											<input class="form-check-input" type="radio" name="que"
 												value="Which is your favorite book?"> <label class="form-check-label">
 												Which is your favorite book? </label>
+											<span class="badge bgl-danger text-danger font-w700">${QueError}</span>
 										</div>
 										
 										<div class="mb-3">
 											<label class="mb-1"><strong>Answer</strong></label> <input
 												type="text" class="form-control"
-												placeholder="answer" name="answer">
+												placeholder="answer" name="answer" value="${answerValue }">
+												<span class="badge bgl-danger text-danger font-w700">${answerError}</span>
 										</div>
 										
 										<div class="mb-3">
 											<label class="mb-1"><strong>Email</strong></label> <input
 												type="email" class="form-control"
-												placeholder="hello@example.com" name="email">
+												placeholder="hello@example.com" name="email" value="${emailValue }">
+												<span class="badge bgl-danger text-danger font-w700">${emailError} ${dublicateEmail}</span>
 										</div>
 
 										<div class="mb-3">
 											<label class="mb-1"><strong>Password</strong></label> <input
 												type="password" class="form-control" placeholder="Password"
-												name="password">
+												name="password" value="${passwordValue }">
+												<span class="badge bgl-danger text-danger font-w700">${passwordError}</span>
 										</div>
 
 										<div class="text-center mt-4">

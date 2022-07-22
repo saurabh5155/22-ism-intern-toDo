@@ -25,6 +25,9 @@ public class SubmitUpdateTaskController extends HttpServlet {
 		String endDate = request.getParameter("endDate");
 		
 		int taskId =Integer.parseInt( request.getParameter("taskId"));
+		
+		System.out.println("Submit:"+taskId);
+		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();   
 		System.out.println(name);

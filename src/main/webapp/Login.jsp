@@ -23,14 +23,16 @@
                                     <form action="LoginController" method="post">
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" name="email" class="form-control" placeholder="hello@example.com">
+                                            <input type="email" name="email" class="form-control" placeholder="hello@example.com" value="${emailValue }">
+                                        <span class="badge bgl-danger text-danger font-w700">${emailError}</span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" name="password" class="form-control" placeholder="Password">
+                                            <input type="password" name="password" class="form-control" placeholder="Password" value="${passwordValue }">
+                                        <span class="badge bgl-danger text-danger font-w700">${passwordError}</span>
                                         </div>
                                         <div class="row d-flex justify-content-between mt-4 mb-2">
-                                            <span class="badge badge-danger text-white badge-sm float-end">${InvalidUser}</span>
+                                            <span class="badge	 badge-danger text-white badge-sm float-end">${InvalidUser}</span>
 
                                             <div class="mb-3">
                                                 <a href="ForgotPassword.jsp">Forgot Password?</a>

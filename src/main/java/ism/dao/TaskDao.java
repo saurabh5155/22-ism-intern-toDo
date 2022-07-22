@@ -115,7 +115,7 @@ public class TaskDao {
 			ResultSet rs = ptmt.executeQuery();
 			while (rs.next()) {
 				taskBean = new TaskBean();
-				System.out.println("Hello"+rs.getString("task_name"));
+				
 				taskBean.setTaskName(rs.getString("task_name"));
 				taskBean.setTaskDescription(rs.getString("task_description"));
 				taskBean.setStatus(rs.getString("status"));

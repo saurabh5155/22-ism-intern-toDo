@@ -26,11 +26,13 @@
                                             <label class="mb-1"><strong>Task Name</strong></label>
                                             ${taskId}
                                             <input type="text" name="taskId" hidden="" value="${taskId}">
-                                            <input type="text" name="taskName" class="form-control" placeholder="hello@example.com" value="${taskBean.taskName }">
+                                            <input type="text" name="taskName" class="form-control"  value="${taskBean.taskName }${ taskNameValue}">
+                                            <span class="badge bgl-danger text-danger font-w700">${taskNameError}</span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Task Description</strong></label>
-                                            <input type="text" name="taskDescription" class="form-control" value="${taskBean.taskDescription }">
+                                            <input type="text" name="taskDescription" class="form-control" value="${taskBean.taskDescription }${taskDescriptionValue }">
+                                            <span class="badge bgl-danger text-danger font-w700">${taskDescriptionError}</span>
                                         </div>
                                         
                                         <label class="mb-1"><strong>Set Prority</strong></label>
@@ -43,19 +45,21 @@
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" name="prority"
-												value="mediun"> <label class="form-check-label">
-												Mediun </label>
+												value="medium"> <label class="form-check-label">
+												Medium </label>
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" name="prority"
 												value="low"> <label class="form-check-label">
 												Low </label>
+												<span class="badge bgl-danger text-danger font-w700">${priorityError}</span>
 										</div>
 										
 										
 										  <div class="mb-3">
                                             <label class="mb-1"><strong>End Date</strong></label>
-                                            <input type="date" name="endDate" class="form-control" value="${taskBean.endDate }">
+                                            <input type="date" name="endDate" class="form-control" value="${taskBean.endDate }${endDateValue }">
+                                            <span class="badge bgl-danger text-danger font-w700">${endDateError} ${gratterDate }</span>
                                         </div>
                                         <div class="row d-flex justify-content-between mt-4 mb-2">
                                             <span class="badge badge-danger text-white badge-sm float-end">${InvalidUser}</span>
